@@ -1,0 +1,49 @@
+$default-text-color: #f2c480;
+$secondary-text-color: whitesmoke;
+
+*{
+  z-index: 100;
+}
+
+#navbar {
+  height: 4rem;
+  font-size: larger;
+  display: flex;
+  background-color: #333;
+  color: $default-text-color;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.navbar-link:hover {
+  color: #333;
+  background-color: #f2c480;
+}
+
+#info-container {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem;
+  color: $default-text-color;
+  background-color: #333;
+}
+
+#world:hover #info-container {
+  display: flex;
+}
+
+#author {
+  font-size: x-large;
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}

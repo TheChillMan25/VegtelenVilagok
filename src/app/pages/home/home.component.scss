@@ -1,0 +1,73 @@
+$bg_url: '../../../../public/img/assets/backgrounds/bg.jpg';
+
+.page {
+  background-image: url($bg_url);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-text {
+  color: black;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  color: whitesmoke;
+  text-shadow: 0.2rem 0.2rem 0.2rem black;
+  font-size: 1.7rem;
+}
+
+#cim {
+  align-self: center;
+  font-size: 4rem;
+}
+
+#text {
+  text-align: justify;
+  line-height: 1.8;
+}
+
+#about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 2rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: #222;
+  border-radius: 2rem;
+}
+
+#about-title{
+  font-size: larger;
+  margin-bottom: 2rem;
+}
+
+#close{
+  background-color: #444;
+  padding: 1rem;
+  border: .3rem solid #333;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+#help{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #333;
+  font-size: xx-large;
+  color: whitesmoke;
+  cursor: pointer;
+}
