@@ -1,0 +1,53 @@
+.page {
+  background-image: url(../../../../../public/img/assets/backgrounds/paper_bg.jpg);
+  display: flex;
+  padding: 1rem;
+  width: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  height: calc(100% - 6rem);
+}
+
+.faj-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #333;
+}
+
+.faj-img-container {
+  height: 100%;
+  width: 20%;
+}
+
+.faj-img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.faj-txt {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  height: 100%;
+  width: 70%;
+}
+
+.nep-nev {
+  margin: 0;
+  font-size: xx-large;
+}
+
+hr {
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  border: none;
+}
+
+.leiras {
+  line-height: 1.8;
+  font-size: larger;
+}

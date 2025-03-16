@@ -1,0 +1,32 @@
+@switch (currentFaj) { @case ('folyokoz') {
+<app-folyokoz></app-folyokoz>
+} @case ('toronyvarosok') {
+<app-toronyvarosok></app-toronyvarosok>
+} @case ('kelet_nepe') {
+<app-kelet-nepe></app-kelet-nepe>
+} @case ('novenyszerzetek') {
+<app-novenyszerzetek></app-novenyszerzetek>
+} @case ('gepszulottek') {
+<app-gepszulottek></app-gepszulottek>
+} @case ('atkozottak') {
+<app-atkozottak></app-atkozottak>
+} @default {
+<div class="page">
+  @for (card of fajCards; track $index) {
+  <div id='{{ card.id }}' class="faj-container" (click)="changeFaj(card.id)">
+    <div>
+      <div class="faj-header">
+        <img
+          class="faj-img"
+          src='{{card.img}}'
+          alt='{{card.name}}'
+        />
+      </div>
+      <div class="faj-footer">
+        <span class="cim">{{card.name}}</span>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+} }

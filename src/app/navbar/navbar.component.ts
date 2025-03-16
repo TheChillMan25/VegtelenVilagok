@@ -12,9 +12,10 @@ export class NavbarComponent {
   logoWidth: string = '4rem';
   logoHeight: string = '4rem';
 
-  @Output() logoClick = new EventEmitter<string>();
+  @Output() menuClick = new EventEmitter<string>();
 
-  onlogoClick() {
-    this.logoClick.emit('home');
+  onMenuClick(page: string): void {
+    this.menuClick.emit(page);
+    console.log(page);
   }
 }
