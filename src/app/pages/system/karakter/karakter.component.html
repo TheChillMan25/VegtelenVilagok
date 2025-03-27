@@ -1,0 +1,44 @@
+<div class="page">
+  <h2 id="intro">
+    A karakteralkotás a szerepjátékok szerves része. Minden játékosnak legalább
+    egy teljes értékű ilyen karakterrel kell rendelkeznie, hogy játszhasson a
+    játékkal.
+    <span>Az alábbiakban olvasható a karakteralkotás menete:</span>
+  </h2>
+  <div id="karakter" class="container">
+    <span>A karaktered meghatározásához két módszer közül választhatsz:</span>
+    <ol>
+      <li>
+        A karaktered minden tulajdonságát (nép, háttér, út, stb.) kockával dobod
+        ki. (Ha teljesen véletlenszerű karaktert szeretnél, akkor ezt válaszd.)
+      </li>
+      <li>
+        A karaktered csak fizikai és mentális tulajdonságait (erő, ügyesség,
+        intelligencia, stb.) dobod ki, a többit magad választod ki.
+      </li>
+    </ol>
+  </div>
+  <div class="container">
+    <span class="title">Karakter népének kiválasztása</span>
+    <span>Dobj d20-as kockával, hogy megkapd a karaktered népét: (17-nél nagyobb dobás esetén...)</span>
+    <table id="nep-table">
+        <tr>
+            <th>Kocka értéke</th>
+            <th>Nép neve</th>
+        </tr>
+        @for (nation of nationData; track $index) {
+            <tr>
+                <td>{{nation.diceNum}}</td>
+                <td>{{nation.nationName}}</td>
+            </tr>
+        }
+    </table>
+  </div>
+  <div class="container"><span class="title"></span></div>
+  <div class="container"><span class="title"></span></div>
+  <div class="container"><span class="title"></span></div>
+  <div class="container"><span class="title"></span></div>
+  <div class="container"><span class="title"></span></div>
+  <div class="container"><span class="title"></span></div>
+  <div class="container"><span class="title"></span></div>
+</div>

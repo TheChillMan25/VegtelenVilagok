@@ -1,0 +1,23 @@
+<div id="navbar">
+  <div id="logo" routerLink="/home">
+    <img
+      [src]="logoIMGPath"
+      alt="To index"
+      id="logo"
+      [ngStyle]="{ width: logoWidth, height: logoHeight, cursor: 'pointer' }"
+    />
+  </div>
+  <div
+    id="world"
+    class="navbar-link"
+    [ngStyle]="{ width: 'calc(120px - 2rem)' }"
+  >
+    A világ
+    <div id="info-container" [ngStyle]="{ width: '120px' }">
+      <div class="navbar-link" routerLink="/eredet">Eredet</div>
+      <div class="navbar-link" routerLink="/tajak">Tájak</div>
+      <div class="navbar-link" routerLink="/fajok">Fajok</div>
+    </div>
+  </div>
+  <p id="author">Ágas és Bogas</p>
+</div>

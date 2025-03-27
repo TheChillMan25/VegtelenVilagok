@@ -1,15 +1,10 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FolyokozComponent } from '../fajok/fajok/folyokoz/folyokoz.component';
-import { AtkozottakComponent } from "./fajok/atkozottak/atkozottak.component";
-import { GepszulottekComponent } from './fajok/gepszulottek/gepszulottek.component';
-import { KeletNepeComponent } from "./fajok/kelet-nepe/kelet-nepe.component";
-import { NovenyszerzetekComponent } from './fajok/novenyszerzetek/novenyszerzetek.component';
-import { ToronyvarosokComponent } from './fajok/toronyvarosok/toronyvarosok.component';
+import { RouterModule, RouterLink } from '@angular/router';
 import { CardData } from './fajok/fajok_card_data';
 
 @Component({
   selector: 'app-fajok',
-  imports: [FolyokozComponent, AtkozottakComponent, GepszulottekComponent, KeletNepeComponent, NovenyszerzetekComponent, ToronyvarosokComponent],
+  imports: [RouterModule, RouterLink],
   templateUrl: './fajok.component.html',
   styleUrl: './fajok.component.scss'
 })
