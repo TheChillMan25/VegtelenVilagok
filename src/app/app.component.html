@@ -1,4 +1,4 @@
-<app-navbar (menuClick)="changePage($event)"></app-navbar>
+<!-- <app-navbar (menuClick)="changePage($event)"></app-navbar>
 @switch (page){ 
     @case ('home'){
         <app-home></app-home>
@@ -12,4 +12,6 @@
 }
 @if (page !== 'home') {
     <div id="back" (click)="onBack()"><i class="fa-solid fa-angle-left"></i><span>Vissza</span></div>
-}
+} -->
+<app-navbar></app-navbar>
+<router-outlet/>
