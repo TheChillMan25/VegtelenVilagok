@@ -33,7 +33,6 @@ $bg_url: "../../../../public/img/assets/backgrounds/bg.jpg";
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
   padding: 2rem;
   display: none;
   flex-direction: column;
@@ -41,6 +40,7 @@ $bg_url: "../../../../public/img/assets/backgrounds/bg.jpg";
   gap: 2rem;
   background-color: #222;
   border-radius: 2rem;
+  font-size: large;
   font-family: "Arial", sans-serif;
 }
 
