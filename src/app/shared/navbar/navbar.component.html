@@ -1,12 +1,16 @@
 <div id="navbar">
-  <div id="logo" routerLink="/home">
+  <!-- <div id="logo" routerLink="/home">
     <img
       [src]="logoIMGPath"
       alt="To index"
-      id="logo"
-      [ngStyle]="{ width: logoWidth, height: logoHeight, cursor: 'pointer' }"
+      id="logo-img"
+      [ngStyle]="{
+        width: '4rem',
+        height: '4rem',
+        cursor: 'pointer'
+      }"
     />
-  </div>
+  </div> -->
   <div
     id="world"
     class="navbar-link"
@@ -19,5 +23,16 @@
       <div class="navbar-link" routerLink="/fajok">Fajok</div>
     </div>
   </div>
-  <p id="author">Ágas és Bogas</p>
+  <div
+    id="world"
+    class="navbar-link"
+    [ngStyle]="{ width: 'calc(120px - 2rem)' }"
+  >
+    Rendszer
+    <div id="info-container">
+      <div class="navbar-link" routerLink="/eredet">Karakter</div>
+      <div class="navbar-link" routerLink="/tajak">Felszerelés</div>
+      <div class="navbar-link" routerLink="/fajok">Tárgyak</div>
+    </div>
+  </div>
 </div>

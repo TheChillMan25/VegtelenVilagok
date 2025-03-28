@@ -39,12 +39,3 @@ $secondary-text-color: whitesmoke;
 #world:hover #info-container {
   display: flex;
 }
-
-#author {
-  font-size: x-large;
-  position: absolute;
-  left: 50%;
-  top: 1rem;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
