@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { NationData } from '../../nation_data';
+import { NationData } from '../nation_data';
 
 interface Nation {
   diceNum: number;
@@ -16,7 +16,7 @@ interface CombinedNationRow {
   selector: 'app-nemzet',
   imports: [MatTableModule],
   templateUrl: './nemzet.component.html',
-  styleUrl: './nemzet.component.scss',
+  styleUrls: ['./nemzet.component.scss', '../segment_shared.scss'],
 })
 export class NemzetComponent {
   nationData: any = NationData;
@@ -38,7 +38,7 @@ export class NemzetComponent {
   }
 
   prepareCombinedData() {
-    for (let i = 0; i < this.nationData.length/2; i++) {
+    for (let i = 0; i < this.nationData.length / 2; i++) {
       this.combinedData.push({
         left: this.nationData[i] as Nation,
         right: this.nationData[i + 9] as Nation,

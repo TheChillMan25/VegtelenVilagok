@@ -1,0 +1,68 @@
+<div class="inner-content">
+  <h2>Felszerelés</h2>
+  <p>
+    Karakter alkotás során lehetőség van felszerelni a hősödet. Ezt
+    fegyverekkel, páncéllal, tárgyakkal és miegymással teheted meg. Ezeket
+    hasznos lehet a karakter fő tulajdonságaihoz és útjához igazítani a
+    tökéletes összhang érdekében.
+  </p>
+  <p>
+    Minden fegyvernek, páncélnak és tárgynak vannak különböző tulajdonságai,
+    ezeket érdemes figyelemben tartani, attól függően, hogy milyen orientáltságú
+    karaktert szeretnél alkotni.<a routerLink="felszereles"
+      >További tudnivalók a felszerelésről és a tárgyakról
+    </a>
+  </p>
+  <mat-table [dataSource]="weaponDataSource">
+    <ng-container matColumnDef="fegyver">
+      <mat-header-cell *matHeaderCellDef>Fegyver</mat-header-cell>
+      <mat-cell *matCellDef="let fegyver">
+        {{ fegyver.nev }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="sebzes">
+      <mat-header-cell *matHeaderCellDef>Sebzés (kocka)</mat-header-cell>
+      <mat-cell *matCellDef="let fegyver">
+        {{ fegyver.kocka }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ar">
+      <mat-header-cell *matHeaderCellDef>Fegyver</mat-header-cell>
+      <mat-cell *matCellDef="let fegyver">
+        {{ fegyver.ar }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedWeaponColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedWeaponColumns"></mat-row>
+  </mat-table>
+  <mat-table [dataSource]="armourDataSource">
+    <ng-container matColumnDef="pancel">
+        <mat-header-cell *matHeaderCellDef>Páncél</mat-header-cell>
+        <mat-cell *matCellDef="let pancel">
+            {{ pancel.nev }}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ertek">
+        <mat-header-cell *matHeaderCellDef>Védelmi érték</mat-header-cell>
+        <mat-cell *matCellDef="let pancel">
+            {{ pancel.ertek }}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="mod">
+        <mat-header-cell *matHeaderCellDef>Módosító</mat-header-cell>
+        <mat-cell *matCellDef="let pancel">
+            {{ pancel.mod }}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ar">
+        <mat-header-cell *matHeaderCellDef>Ár</mat-header-cell>
+        <mat-cell *matCellDef="let pancel">
+            {{ pancel.ar }}
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedArmorColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedArmorColumns"></mat-row>
+  </mat-table>
+</div>

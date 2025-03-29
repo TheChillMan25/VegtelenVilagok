@@ -1,0 +1,48 @@
+<div class="inner-content">
+  <h2>Utak</h2>
+  <p>
+    Az utakat 6 különböző csoportba lehet besorolni a hozzájuk tartozó fő
+    tulajdonság szerint.
+  </p>
+  <mat-table [dataSource]="utakDataSource">
+    <ng-container matColumnDef="eroUtja">
+      <mat-header-cell *matHeaderCellDef>Erő útja</mat-header-cell>
+      <mat-cell *matCellDef="let ut">
+        {{ ut.eroUtja }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ugyessegUtja">
+      <mat-header-cell *matHeaderCellDef>Ügyesség útja</mat-header-cell>
+      <mat-cell *matCellDef="let ut">
+        {{ ut.ugyessegUtja }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="kitartasUtja">
+      <mat-header-cell *matHeaderCellDef>Kitartás útja</mat-header-cell>
+      <mat-cell *matCellDef="let ut">
+        {{ ut.kitartasUtja }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="eszUtja">
+      <mat-header-cell *matHeaderCellDef>Ész útja</mat-header-cell>
+      <mat-cell *matCellDef="let ut">
+        {{ ut.eszUtja }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="fortelyUtja">
+      <mat-header-cell *matHeaderCellDef>Fortély útja</mat-header-cell>
+      <mat-cell *matCellDef="let ut">
+        {{ ut.fortelyUtja }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="akarateroUtja">
+      <mat-header-cell *matHeaderCellDef>Akaraterő útja</mat-header-cell>
+      <mat-cell *matCellDef="let ut">
+        {{ ut.akarateroUtja }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
