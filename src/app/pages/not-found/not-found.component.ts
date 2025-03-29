@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-not-found',
   imports: [
     CommonModule,
-    NgStyle,
     RouterLink,
     MatCardModule,
     MatButtonModule,

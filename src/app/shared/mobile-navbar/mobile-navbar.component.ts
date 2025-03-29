@@ -6,7 +6,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-mobile-navbar',
-  imports: [RouterLink, RouterLinkActive, MatListModule, MatIconModule],
+  imports: [RouterLink, MatListModule, MatIconModule],
   templateUrl: './mobile-navbar.component.html',
   styleUrl: './mobile-navbar.component.scss',
 })

@@ -1,0 +1,37 @@
+<div class="inner-content">
+  <p>
+    A karaktered népének meghatározásáhozz dobj egy d20 (20 oldalú) kockával
+  </p>
+  <mat-table [dataSource]="nationDataSource">
+    <ng-container matColumnDef="diceNum1">
+      <mat-header-cell *matHeaderCellDef>Dobás</mat-header-cell>
+      <mat-cell *matCellDef="let nation">
+        {{ nation.left?.diceNum }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nationName1">
+      <mat-header-cell *matHeaderCellDef>Nép neve</mat-header-cell>
+      <mat-cell *matCellDef="let nation">
+        {{ nation.left?.nationName }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="diceNum2">
+      <mat-header-cell *matHeaderCellDef>Dobás</mat-header-cell>
+      <mat-cell *matCellDef="let nation">
+        {{ nation.right?.diceNum }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nationName2">
+      <mat-header-cell *matHeaderCellDef>Nép neve</mat-header-cell>
+      <mat-cell *matCellDef="let nation">
+        {{ nation.right?.nationName }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

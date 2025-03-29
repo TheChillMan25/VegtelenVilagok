@@ -1,0 +1,26 @@
+$table-bg: #333;
+$font-color: #f2c480;
+
+p{
+    text-align: center;
+    font-size: larger;
+}
+
+table{
+    width: 60% !important;
+    background-color: transparent;
+}
+
+.inner-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+mat-paginator{
+    //background-color: $table-bg;
+    color: $font-color;
+    --mat-icon-button-state-layer-color: $font-color;
+}
