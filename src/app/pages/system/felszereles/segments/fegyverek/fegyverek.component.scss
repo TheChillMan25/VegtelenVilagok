@@ -1,0 +1,76 @@
+.inner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #f2c480;
+}
+
+#keywords {
+  padding: 1rem;
+  width: fit-content;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.prop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: calc(100% - 1rem);
+  padding: 0.5rem;
+  font-size: large;
+}
+
+.desc {
+  color: whitesmoke;
+}
+
+#weapons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.weapon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #444;
+  color: whitesmoke;
+  font-size: x-large;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.details {
+  padding: 2rem;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  color: whitesmoke;
+  font-size: larger;
+  background-color: #222;
+}
+
+@media (max-width: 768px) {
+  .prop {
+    font-size: medium;
+  }
+
+  .weapon {
+    padding: 1rem;
+    font-size: medium;
+  }
+}

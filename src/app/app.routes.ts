@@ -71,6 +71,14 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'felszereles',
+    title: 'Ágas és Bogas | Felszerelés',
+    loadComponent: () =>
+      import('./pages/system/felszereles/felszereles.component').then(
+        (m) => m.FelszerelesComponent
+      ),
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',

@@ -1,0 +1,26 @@
+<div class="inner-content">
+  <h1>Fegyverek</h1>
+  <div id="keywords">
+    <h2>Hatások</h2>
+    @for (prop of props; track $index) {
+    <div class="prop">
+      <span class="nev">{{ prop.nev }}:</span>
+      <span class="desc">{{ prop.desc }}</span>
+    </div>
+    }
+  </div>
+  <div id="weapons">
+    @for (weapon of weapons; track $index) {
+    <div class="weapon" (click)="showDetails($index)">
+      <span class="nev">{{ weapon.nev }}</span>
+      @if (selected === $index) {
+      <div class="details">
+        <span class="nev">{{ weapon.nev }}</span>
+        <span class="dice">Sebzés kocka: {{ weapon.kocka }}</span>
+        <span class="props">Hatások: {{ weapon.props }}</span>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>

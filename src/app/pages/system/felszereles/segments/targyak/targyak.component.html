@@ -1,0 +1,18 @@
+<div class="inner-content">
+  <h1>Tárgyak</h1>
+  <div id="item-container">
+    @for (item of items; track $index) {
+    <div class="item" (click)="showDetails($index)">
+      <div class="nev">
+        {{ item.nev }}
+      </div>
+      @if (selected === $index) {
+      <div class="details">
+        <span>{{ item.nev }}</span>
+        <span>{{ item.desc }}</span>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>

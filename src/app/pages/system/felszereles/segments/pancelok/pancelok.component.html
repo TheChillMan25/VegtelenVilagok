@@ -1,0 +1,24 @@
+<div class="inner-content">
+  <h1>Páncélok</h1>
+  <div id="armour-container">
+    @for (pancel of pancelok; track $index) {
+    <div class="pancel">
+      <div class="prop">
+        <span class="nev">{{ pancel.nev }}</span>
+      </div>
+      <div class="prop">
+        Védelem:
+        <span class="ved">{{ pancel.ved }}</span>
+      </div>
+      <div class="prop">
+        Módosító:
+        <span class="mod">{{ pancel.mod }}</span>
+      </div>
+      <div class="prop">
+        Szükséges:
+        <span class="desc">{{ pancel.desc }}</span>
+      </div>
+    </div>
+    }
+  </div>
+</div>
