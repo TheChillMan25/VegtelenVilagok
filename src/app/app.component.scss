@@ -1,0 +1,58 @@
+mat-sidenav-container {
+  height: 100%;
+  background-color: #333;
+}
+
+mat-toolbar {
+  height: 4rem;
+  background-color: #333;
+  padding: 0rem !important;
+}
+
+mat-sidenav {
+  border-radius: 0;
+  background-color: #333;
+  --mat-sidenav-container-width: 18rem;
+}
+
+button {
+  --mat-text-button-state-layer-color: whitesmoke;
+}
+
+#logo {
+  height: 4rem;
+  width: 4rem;
+}
+
+.menu-toggle-button {
+  margin-left: auto;
+  color: whitesmoke;
+  display: none;
+}
+
+.menu-toggle-button mat-icon {
+  margin: 0;
+  color: whitesmoke;
+}
+
+#author {
+  font-size: 1.6rem;
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  transform: translateX(-50%);
+  color: #f2c480;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  app-navbar {
+    display: none;
+  }
+}

@@ -9,18 +9,5 @@ import { CardData } from './fajok/fajok_card_data';
   styleUrl: './fajok.component.scss'
 })
 export class FajokComponent {
-
-  currentFaj: string = '';
   fajCards: any = CardData;
-
-  @Output() back = new EventEmitter<void>();
-
-  changeFaj(faj: string): void {
-    this.currentFaj = faj;
-    //console.log(faj);
-  }
-
-  onBack(): void {
-    this.back.emit();
-  }
 }

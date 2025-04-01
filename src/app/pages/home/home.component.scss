@@ -1,4 +1,4 @@
-$bg_url: '../../../../public/img/assets/backgrounds/bg.jpg';
+$bg_url: "../../../../public/img/assets/backgrounds/bg.jpg";
 
 .page {
   background-image: url($bg_url);
@@ -8,11 +8,11 @@ $bg_url: '../../../../public/img/assets/backgrounds/bg.jpg';
 }
 
 .index-text {
-  color: black;
-  display: flex;
   width: 80%;
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
   color: whitesmoke;
   text-shadow: 0.2rem 0.2rem 0.2rem black;
   font-size: 1.7rem;
@@ -33,7 +33,6 @@ $bg_url: '../../../../public/img/assets/backgrounds/bg.jpg';
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
   padding: 2rem;
   display: none;
   flex-direction: column;
@@ -41,23 +40,23 @@ $bg_url: '../../../../public/img/assets/backgrounds/bg.jpg';
   gap: 2rem;
   background-color: #222;
   border-radius: 2rem;
-  font-family: 'Arial', sans-serif;
+  font-size: large;
+  font-family: "Arial", sans-serif;
 }
 
-#about-title{
+#about-title {
   font-size: larger;
-  margin-bottom: 2rem;
 }
 
-#close{
+#close {
   background-color: #444;
   padding: 1rem;
-  border: .3rem solid #333;
+  border: 0.3rem solid #333;
   border-radius: 1rem;
   cursor: pointer;
 }
 
-#help{
+#help {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,4 +70,34 @@ $bg_url: '../../../../public/img/assets/backgrounds/bg.jpg';
   font-size: xx-large;
   color: whitesmoke;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .index-text {
+    width: 95%;
+  }
+
+  #cim {
+    font-size: 2rem;
+  }
+
+  #text {
+    font-size: 1.2rem;
+  }
+
+  #about {
+    width: 80%;
+    gap: 1rem;
+    font-size: medium;
+  }
+
+  #close{
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 400px) and (max-height: 700px){
+  #about{
+    font-size: small;
+  }
 }

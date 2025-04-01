@@ -1,1 +1,38 @@
-<p>felszereles works!</p>
+<div class="page">
+  <div id="sidebar">
+    <mat-card (click)="chooseSegment('fegyver')">
+      <mat-card-content>
+        <div class="card-content">
+          <h2>Fegyverek</h2>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card (click)="chooseSegment('pancel')">
+      <mat-card-content>
+        <div class="card-content">
+          <h2>Páncélzat</h2>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card (click)="chooseSegment('targyak')">
+      <mat-card-content>
+        <div class="card-content">
+          <h2>Tárgyak</h2>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div id="content">
+    @switch (segment) { @case ("fegyver") { <app-fegyverek></app-fegyverek> }
+    @case ("pancel") { <app-pancelok></app-pancelok> } @case ("targyak") {
+    <app-targyak></app-targyak> } @default {
+    <div id="def-content">
+      <h1>Felszerelés</h1>
+      <p>
+        A karakterek a játék során hordhatnak magukkal különböző fegyvereket,
+        tárgyakat a hátizsákjaikban és viselhetnek páncélokat.
+      </p>
+    </div>
+    } }
+  </div>
+</div>

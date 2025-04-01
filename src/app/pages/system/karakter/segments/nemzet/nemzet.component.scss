@@ -1,0 +1,14 @@
+p {
+  text-align: center;
+  font-size: larger;
+}
+
+mat-table {
+  width: 75% !important;
+}
+
+@media (max-width: 786px) {
+  mat-table {
+    width: 95% !important;
+  }
+}

@@ -6,17 +6,17 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 export const routes: Routes = [
   {
     path: 'home',
-    title: "Ágas és Bogas | Enciklopédia",
+    title: 'Ágas és Bogas | Enciklopédia',
     component: HomeComponent,
   },
   {
     path: 'fajok',
-    title: "Ágas és Bogas | Fajok",
+    title: 'Ágas és Bogas | Fajok',
     component: FajokComponent,
   },
   {
     path: 'fajok/folyokoz',
-    title: "Fajok | Folyóköziek",
+    title: 'Fajok | Folyóköziek',
     loadComponent: () =>
       import('./pages/fajok/fajok/folyokoz/folyokoz.component').then(
         (m) => m.FolyokozComponent
@@ -24,7 +24,7 @@ export const routes: Routes = [
   },
   {
     path: 'fajok/toronyvarosok',
-    title: "Fajok | Toronyvárosiak",
+    title: 'Fajok | Toronyvárosiak',
     loadComponent: () =>
       import('./pages/fajok/fajok/toronyvarosok/toronyvarosok.component').then(
         (m) => m.ToronyvarosokComponent
@@ -32,7 +32,7 @@ export const routes: Routes = [
   },
   {
     path: 'fajok/kelet_nepe',
-    title: "Fajok | Kelet Népe",
+    title: 'Fajok | Kelet Népe',
     loadComponent: () =>
       import('./pages/fajok/fajok/kelet-nepe/kelet-nepe.component').then(
         (m) => m.KeletNepeComponent
@@ -40,7 +40,7 @@ export const routes: Routes = [
   },
   {
     path: 'fajok/novenyszerzetek',
-    title: "Fajok | Növényszerzetek",
+    title: 'Fajok | Növényszerzetek',
     loadComponent: () =>
       import(
         './pages/fajok/fajok/novenyszerzetek/novenyszerzetek.component'
@@ -48,7 +48,7 @@ export const routes: Routes = [
   },
   {
     path: 'fajok/gepszulottek',
-    title: "Fajok | Gépszülöttek",
+    title: 'Fajok | Gépszülöttek',
     loadComponent: () =>
       import('./pages/fajok/fajok/gepszulottek/gepszulottek.component').then(
         (m) => m.GepszulottekComponent
@@ -56,10 +56,26 @@ export const routes: Routes = [
   },
   {
     path: 'fajok/atkozottak',
-    title: "Fajok | Átkozottak",
+    title: 'Fajok | Átkozottak',
     loadComponent: () =>
       import('./pages/fajok/fajok/atkozottak/atkozottak.component').then(
         (m) => m.AtkozottakComponent
+      ),
+  },
+  {
+    path: 'karakter',
+    title: 'Ágas és Bogas | Karakter',
+    loadComponent: () =>
+      import('./pages/system/karakter/karakter.component').then(
+        (m) => m.KarakterComponent
+      ),
+  },
+  {
+    path: 'felszereles',
+    title: 'Ágas és Bogas | Felszerelés',
+    loadComponent: () =>
+      import('./pages/system/felszereles/felszereles.component').then(
+        (m) => m.FelszerelesComponent
       ),
   },
   {
@@ -69,7 +85,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    title: "Page not found ...",
+    title: 'Page not found ...',
     component: NotFoundComponent,
   },
 ];

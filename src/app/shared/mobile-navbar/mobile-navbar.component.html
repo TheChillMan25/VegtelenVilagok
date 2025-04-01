@@ -1,0 +1,33 @@
+<mat-nav-list>
+  <a mat-list-item id="world" (click)="toggleMenu('world-options')">
+    <span class="menu-item-text main-item">A világ</span>
+    <div id="world-options">
+      <!-- <a routerLink="/eredet" (click)="closeMenu()">
+        <span class="menu-item-text">Eredet</span>
+      </a>
+      <a routerLink="/tajak" (click)="closeMenu()">
+        <span class="menu-item-text">Tájak</span>
+      </a> -->
+      <a routerLink="/fajok" (click)="closeMenu()">
+        <span class="menu-item-text">Fajok</span>
+      </a>
+    </div>
+  </a>
+  <a mat-list-item id="system" (click)="toggleMenu('system-options')">
+    <span class="menu-item-text main-item">Rendszer</span>
+    <div id="system-options">
+      <a routerLink="/karakter" (click)="closeMenu()">
+        <span class="menu-item-text">Karakter</span>
+      </a>
+      <a routerLink="/felszereles" (click)="closeMenu()">
+        <span class="menu-item-text">Felszerelés</span>
+      </a>
+    </div>
+  </a>
+  <a mat-list-item routerLink="/profil"
+    ><span class="menu-item-text main-item">Profil</span></a
+  >
+  <a mat-list-item routerLink="/karakter-keszito"
+    ><span class="menu-item-text main-item">Karakter készítő</span></a
+  >
+</mat-nav-list>

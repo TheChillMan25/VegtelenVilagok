@@ -1,12 +1,16 @@
 <div id="navbar">
-  <div id="logo" routerLink="/home">
+  <!-- <div id="logo" routerLink="/home">
     <img
       [src]="logoIMGPath"
       alt="To index"
-      id="logo"
-      [ngStyle]="{ width: logoWidth, height: logoHeight, cursor: 'pointer' }"
+      id="logo-img"
+      [ngStyle]="{
+        width: '4rem',
+        height: '4rem',
+        cursor: 'pointer'
+      }"
     />
-  </div>
+  </div> -->
   <div
     id="world"
     class="navbar-link"
@@ -14,10 +18,16 @@
   >
     A világ
     <div id="info-container" [ngStyle]="{ width: '120px' }">
-      <div class="navbar-link" routerLink="/eredet">Eredet</div>
-      <div class="navbar-link" routerLink="/tajak">Tájak</div>
+      <!-- <div class="navbar-link" routerLink="/eredet">Eredet</div>
+      <div class="navbar-link" routerLink="/tajak">Tájak</div> -->
       <div class="navbar-link" routerLink="/fajok">Fajok</div>
     </div>
   </div>
-  <p id="author">Ágas és Bogas</p>
+  <div id="world" class="navbar-link">
+    Rendszer
+    <div id="info-container">
+      <div class="navbar-link" routerLink="/karakter">Karakter</div>
+      <div class="navbar-link" routerLink="/felszereles">Felszerelés</div>
+    </div>
+  </div>
 </div>

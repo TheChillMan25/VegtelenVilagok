@@ -1,0 +1,49 @@
+$primary: #f2c480;
+$secondary: whitesmoke;
+
+.tul-nev {
+  font-weight: bold;
+}
+
+p {
+  width: 100%;
+  text-align: justify;
+}
+
+table {
+  background-color: #333;
+  border-collapse: collapse;
+  border: 0.2rem solid #222;
+}
+
+.header {
+  color: $primary;
+}
+
+tr:first-child {
+  color: $primary;
+}
+
+tr:nth-child(2) {
+  color: $secondary;
+}
+
+td {
+  border-collapse: collapse;
+  border: 0.1rem solid #000;
+  padding: 0.5rem;
+  font-size: larger;
+}
+
+@media (max-width: 768px) {
+  table td {
+    font-size: small;
+  }
+}
+
+@media (max-width: 400px) {
+  table td {
+    font-size: x-small;
+    padding: 0.2rem !important;
+  }
+}

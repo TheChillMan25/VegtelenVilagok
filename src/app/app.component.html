@@ -1,17 +1,37 @@
-<!-- <app-navbar (menuClick)="changePage($event)"></app-navbar>
-@switch (page){ 
-    @case ('home'){
-        <app-home></app-home>
-    } 
-    @case ('fajok') {
-        <app-fajok (back)="onBack()"></app-fajok>
-    } 
-    @default {
-        <p>Page not found ...</p>
-    } 
-}
-@if (page !== 'home') {
-    <div id="back" (click)="onBack()"><i class="fa-solid fa-angle-left"></i><span>Vissza</span></div>
-} -->
-<app-navbar></app-navbar>
-<router-outlet/>
+<!-- <app-navbar></app-navbar>
+<router-outlet/> -->
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-mobile-navbar [sidenav]="sidenav"></app-mobile-navbar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <div id="logo" routerLink="/home">
+        <img
+          [src]="logoIMGPath"
+          alt="To index"
+          id="logo-img"
+          [ngStyle]="{
+            width: '4rem',
+            height: '4rem',
+            cursor: 'pointer'
+          }"
+        />
+      </div>
+      <p id="author">Ágas és Bogas</p>
+      <app-navbar></app-navbar>
+      <button
+        mat-button
+        class="menu-toggle-button"
+        (click)="onToggleSidenav(sidenav)"
+      >
+        <mat-icon
+          [ngStyle]="{ height: '2rem', width: '2rem', 'font-size': 'xx-large' }"
+          >menu</mat-icon
+        >
+      </button>
+    </mat-toolbar>
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>
