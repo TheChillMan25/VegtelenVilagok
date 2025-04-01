@@ -15,10 +15,16 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  height: 50%;
+  height: fit-content;
   padding: 1rem;
   width: calc(100% - 2rem);
   font-size: larger;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#armour-container::-webkit-scrollbar {
+  width: 0;
 }
 
 .pancel {
