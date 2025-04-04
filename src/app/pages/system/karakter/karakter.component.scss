@@ -1,5 +1,5 @@
 .page {
-  background-image: url("../../../../../public/img/assets/table.jpg");
+  background-image: url(/img/assets/table.jpg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 #container {
-  background-image: url("../../../../../public/img/assets/backgrounds/paper_bg.jpg");
+  background-image: url(/img/assets/backgrounds/paper_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: calc(50% - 2rem);

@@ -46,6 +46,10 @@ button {
   z-index: 100;
 }
 
+app-navbar {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .menu-toggle-button {
     display: flex;

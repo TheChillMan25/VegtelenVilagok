@@ -7,6 +7,9 @@
 
 html,
 body {
+  --mat-sys-primary: #333;
+  //--mat-sys-on-primary: #f2c480;
+  --mat-sys-outline: transparent;
   height: 100%;
   width: 100%;
 }
@@ -20,4 +23,17 @@ body {
   background-repeat: no-repeat;
   overflow-y: auto;
   scrollbar-width: none;
+}
+
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+  background-color: #444 !important;
+  border: 0.2rem solid #222;
+}
+
+.mdc-text-field {
+  border-radius: 0.5rem !important;
+}
+
+.mat-mdc-notch-piece {
+  border: none !important;
 }

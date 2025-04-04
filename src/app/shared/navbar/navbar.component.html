@@ -30,4 +30,18 @@
       <div class="navbar-link" routerLink="/felszereles">Felszerelés</div>
     </div>
   </div>
+  <div id="loggers">
+    @if(isLoggedIn){
+    <div id="profil" class="navBtn navbar-link" routerLink="/profil">
+      Profil
+    </div>
+    <div id="logout" class="navBtn navbar-link" (click)="logout()">
+      Kijelentkezés
+    </div>
+    } @if (!isLoggedIn) {
+    <div id="login" class="navBtn navbar-link" routerLink="/login">
+      Bejelentkezés
+    </div>
+    }
+  </div>
 </div>
