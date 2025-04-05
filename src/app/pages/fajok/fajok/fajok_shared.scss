@@ -52,12 +52,12 @@ hr {
   font-size: larger;
 }
 
-@media (max-width: 768px){
-  .faj-container{
+@media (max-width: 768px) {
+  .faj-container {
     flex-direction: column;
   }
 
-  .faj-img-container{
+  .faj-img-container {
     width: 75%;
   }
 }

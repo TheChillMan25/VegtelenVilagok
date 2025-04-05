@@ -21,6 +21,14 @@ export const routes: Routes = [
       import('./pages/login/login.component').then((m) => m.LoginComponent),
   },
   {
+    path: 'register',
+    title: 'Regisztráció',
+    loadComponent: () =>
+      import('./pages/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
+  {
     path: 'fajok/folyokoz',
     title: 'Fajok | Folyóköziek',
     loadComponent: () =>

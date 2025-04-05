@@ -34,10 +34,11 @@
     @if(isLoggedIn){
     <div id="profil" class="navBtn navbar-link" routerLink="/profil">
       Profil
+      <div id="logout" class="navBtn navbar-link" (click)="logout()">
+        Kijelentkezés
+      </div>
     </div>
-    <div id="logout" class="navBtn navbar-link" (click)="logout()">
-      Kijelentkezés
-    </div>
+
     } @if (!isLoggedIn) {
     <div id="login" class="navBtn navbar-link" routerLink="/login">
       Bejelentkezés

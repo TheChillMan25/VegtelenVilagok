@@ -44,3 +44,21 @@ $secondary-text-color: whitesmoke;
   margin-left: auto;
   display: flex;
 }
+
+#logout {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  color: #f2c480;
+  background-color: #333;
+}
+
+#profil:hover #logout {
+  display: flex;
+}
+
+#logout:hover {
+  color: #333;
+  background-color: #f2c480;
+}
