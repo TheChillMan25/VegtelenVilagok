@@ -24,11 +24,12 @@
       </a>
     </div>
   </a>
-  <a mat-list-item routerLink="/karakter-keszito"
+
+  @if(isLoggedIn){
+  <a mat-list-item routerLink="/karakter-keszito" (click)="closeMenu()"
     ><span class="menu-item-text main-item">Karakter készítő</span></a
   >
-  @if(isLoggedIn){
-  <a mat-list-item routerLink="/profil"
+  <a mat-list-item routerLink="/profil" (click)="closeMenu()"
     ><span class="menu-item-text main-item">Profil</span></a
   >
   <a mat-list-item

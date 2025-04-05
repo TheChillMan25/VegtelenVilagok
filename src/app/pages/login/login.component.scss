@@ -14,6 +14,7 @@ form {
   padding: 2rem;
   border-radius: 1rem;
   background-color: #333;
+  --mat-form-field-outlined-label-text-populated-size: 1.3rem;
 }
 
 #title {
@@ -48,4 +49,15 @@ mat-icon {
   color: whitesmoke;
   font-size: larger;
   text-decoration: none;
+}
+
+.error-message {
+  color: red;
+  font-size: large;
+}
+
+@media (max-width: 450px) {
+  #title {
+    font-size: 2.5rem;
+  }
 }

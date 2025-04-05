@@ -43,7 +43,6 @@ export class LoginComponent {
       this.showLoginForm = false;
 
       localStorage.setItem('isLoggedIn', 'true');
-      console.log('Login succesful!');
 
       window.location.href = '/home';
     } else {
