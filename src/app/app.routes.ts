@@ -29,6 +29,12 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'profil',
+    title: 'Profil',
+    loadComponent: () =>
+      import('./pages/profil/profil.component').then((m) => m.ProfilComponent),
+  },
+  {
     path: 'fajok/folyokoz',
     title: 'Fajok | Folyóköziek',
     loadComponent: () =>

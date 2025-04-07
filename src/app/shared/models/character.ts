@@ -1,10 +1,13 @@
-import { Stat } from "./statok";
+import { MainStat } from './main_stat';
+import { Stat } from './statok';
 
-export interface Character{
-    nev: string;
-    faj: string;
-    statok: Stat[];
-    ut: string;
-    felszereles: string[];
-    targyak: string[]
+export interface Character {
+  nev: string;
+  faj: string;
+  mainStatok: MainStat[];
+  statok: Stat[];
+  ut: string;
+  utSzint: number;
+  felszereles: string[];
+  targyak: string[];
 }

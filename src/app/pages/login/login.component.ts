@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
+import { Character } from '../../shared/models/character';
+import { Stat } from '../../shared/models/statok';
 
 @Component({
   selector: 'app-login',

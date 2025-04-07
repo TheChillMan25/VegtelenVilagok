@@ -1,0 +1,12 @@
+<div class="page">
+  <div id="profil-data" class="container">
+    <h2>Test</h2>
+    <h3>test&commat;gmail.com</h3>
+  </div>
+  <div id="character-container" class="container">
+    @for (character of characters; track $index) {
+    <app-char-templ [character]="character"></app-char-templ>
+    }
+  </div>
+  <button id="asd" (click)="addCharacter()">asd</button>
+</div>

@@ -32,10 +32,19 @@
   </div>
   <div id="loggers">
     @if(isLoggedIn){
-    <div id="profil" class="navBtn navbar-link" routerLink="/profil">
-      Profil
-      <div id="logout" class="navBtn navbar-link" (click)="logout()">
-        Kijelentkezés
+    <div id="profil-options" class="navBtn navbar-link">
+      <div id="profil" routerLink="/profil">Profil</div>
+      <div id="options">
+        <div
+          id="char-create"
+          class="navBtn navbar-link"
+          routerLink="/karakter-keszito"
+        >
+          Karakter készítő
+        </div>
+        <div id="logout" class="navBtn navbar-link" (click)="logout()">
+          Kijelentkezés
+        </div>
       </div>
     </div>
 

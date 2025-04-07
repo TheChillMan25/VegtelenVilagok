@@ -45,8 +45,9 @@ $secondary-text-color: whitesmoke;
   display: flex;
 }
 
-#logout {
+#options {
   display: none;
+  flex-direction: column;
   position: absolute;
   top: 4rem;
   right: 0;
@@ -54,11 +55,6 @@ $secondary-text-color: whitesmoke;
   background-color: #333;
 }
 
-#profil:hover #logout {
+#profil-options:hover #options {
   display: flex;
-}
-
-#logout:hover {
-  color: #333;
-  background-color: #f2c480;
 }

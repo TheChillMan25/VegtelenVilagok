@@ -14,9 +14,11 @@
     <div class="inner-content">
       <h1>Meg is volnánk</h1>
       <h2>Ezek után már nincsen más hátra, csak találni játékos társakat</h2>
-      <button id="reset" (click)="reset()">
-        <mat-icon>history</mat-icon>Elölről
-      </button>
+      @if (isLoggedIn) {<button id="reset" routerLink="/karakter-keszito">
+        <mat-icon>edit</mat-icon>Kipróbálom</button
+      >}@else {<button id="reset" routerLink="/login">
+        <mat-icon>edit</mat-icon>Kipróbálom</button
+      >}
     </div>
     } @default {
     <div class="inner-content">
