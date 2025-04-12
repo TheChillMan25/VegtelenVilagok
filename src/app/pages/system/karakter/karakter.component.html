@@ -14,9 +14,11 @@
     <div class="inner-content">
       <h1>Meg is volnánk</h1>
       <h2>Ezek után már nincsen más hátra, csak találni játékos társakat</h2>
-      <button id="reset" (click)="reset()">
-        <mat-icon>history</mat-icon>Elölről
-      </button>
+      @if (isLoggedIn) {<button id="tryout" routerLink="/karakter-keszito">
+        <mat-icon>edit</mat-icon>Kipróbálom</button
+      >}@else {<button id="tryout" routerLink="/login">
+        <mat-icon>edit</mat-icon>Kipróbálom</button
+      >}
     </div>
     } @default {
     <div class="inner-content">
@@ -32,7 +34,7 @@
           A karakteredet meghatározza a népe, azaz a származása, a tulajdonságai
           (erő, ész, stb.), mentális kapacitása és életereje, a tulajdonságokhoz
           szorosan kapcsolódó "út" és annak szintje (milyen mélységben műveli
-          azt)
+          azt), meg persze nem utolsó sorban a neve
         </p>
         <p>
           Minden karakter rendelkezik felszereléssel, melyeket fegyverek,

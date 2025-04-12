@@ -1,0 +1,90 @@
+.page {
+  background-image: url(/img/assets/backgrounds/bg.jpg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#title {
+  font-size: 6rem;
+  color: whitesmoke;
+  text-shadow: 0.2rem 0.2rem 0.2rem black;
+  margin-top: 4rem;
+}
+
+#form-container {
+  width: 30%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #333;
+  --mat-form-field-outlined-label-text-populated-size: 1.3rem;
+}
+
+button {
+  font-size: larger;
+  background-color: #444 !important;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #222;
+}
+
+button span:first-child::before {
+  background-color: transparent;
+}
+
+button:hover {
+  color: whitesmoke;
+}
+
+input,
+mat-label,
+mat-icon {
+  color: whitesmoke !important;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#loginBtn {
+  color: whitesmoke;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.error-message {
+  color: red;
+  font-size: large;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .page {
+    gap: 1rem;
+  }
+  #title {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+
+  #form-container {
+    width: 90%;
+  }
+
+  form {
+    gap: 0;
+    padding: 1rem;
+  }
+  .error-message {
+    margin: 0.5rem 0;
+  }
+}

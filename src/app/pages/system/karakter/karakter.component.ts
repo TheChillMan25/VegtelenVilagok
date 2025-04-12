@@ -6,6 +6,7 @@ import { TulajdonsagokComponent } from './segments/tulajdonsagok/tulajdonsagok.c
 import { UtakComponent } from './segments/utak/utak.component';
 import { KarakterFelszerelesComponent } from './segments/karakter-felszereles/karakter-felszereles.component';
 import { MatButton } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-karakter',
@@ -15,6 +16,7 @@ import { MatButton } from '@angular/material/button';
     TulajdonsagokComponent,
     UtakComponent,
     KarakterFelszerelesComponent,
+    RouterLink,
   ],
   templateUrl: './karakter.component.html',
   styleUrl: './karakter.component.scss',
@@ -22,8 +24,10 @@ import { MatButton } from '@angular/material/button';
 export class KarakterComponent {
   nationData: any = NationData;
   segment: number = 0;
-  reset() {
-    this.segment = 0;
+  isLoggedIn: boolean = false;
+
+  ngOnInit() {
+    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   }
 
   next() {

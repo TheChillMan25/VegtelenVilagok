@@ -9,7 +9,7 @@
   <p>
     Minden fegyvernek, páncélnak és tárgynak vannak különböző tulajdonságai,
     ezeket érdemes figyelemben tartani, attól függően, hogy milyen orientáltságú
-    karaktert szeretnél alkotni.<a routerLink="felszereles"
+    karaktert szeretnél alkotni.<a routerLink="../felszereles"
       >További tudnivalók a felszerelésről és a tárgyakról
     </a>
   </p>
@@ -38,28 +38,28 @@
   </mat-table>
   <mat-table [dataSource]="armourDataSource">
     <ng-container matColumnDef="pancel">
-        <mat-header-cell *matHeaderCellDef>Páncél</mat-header-cell>
-        <mat-cell *matCellDef="let pancel">
-            {{ pancel.nev }}
-        </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Páncél</mat-header-cell>
+      <mat-cell *matCellDef="let pancel">
+        {{ pancel.nev }}
+      </mat-cell>
     </ng-container>
     <ng-container matColumnDef="ertek">
-        <mat-header-cell *matHeaderCellDef>Védelmi érték</mat-header-cell>
-        <mat-cell *matCellDef="let pancel">
-            {{ pancel.ertek }}
-        </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Védelmi érték</mat-header-cell>
+      <mat-cell *matCellDef="let pancel">
+        {{ pancel.ertek }}
+      </mat-cell>
     </ng-container>
     <ng-container matColumnDef="mod">
-        <mat-header-cell *matHeaderCellDef>Módosító</mat-header-cell>
-        <mat-cell *matCellDef="let pancel">
-            {{ pancel.mod }}
-        </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Módosító</mat-header-cell>
+      <mat-cell *matCellDef="let pancel">
+        {{ pancel.mod }}
+      </mat-cell>
     </ng-container>
     <ng-container matColumnDef="ar">
-        <mat-header-cell *matHeaderCellDef>Ár</mat-header-cell>
-        <mat-cell *matCellDef="let pancel">
-            {{ pancel.ar }}
-        </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Ár</mat-header-cell>
+      <mat-cell *matCellDef="let pancel">
+        {{ pancel.ar }}
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedArmorColumns"></mat-header-row>

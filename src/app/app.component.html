@@ -3,7 +3,10 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-    <app-mobile-navbar [sidenav]="sidenav"></app-mobile-navbar>
+    <app-mobile-navbar
+      [sidenav]="sidenav"
+      [isLoggedIn]="isLoggedIn" (logoutEvent)="handleLogin(false)"
+    ></app-mobile-navbar>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
@@ -20,7 +23,7 @@
         />
       </div>
       <p id="author">Ágas és Bogas</p>
-      <app-navbar></app-navbar>
+      <app-navbar (isLoggedOutEvent)="handleLogin($event)"></app-navbar>
       <button
         mat-button
         class="menu-toggle-button"

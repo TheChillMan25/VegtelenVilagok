@@ -1,6 +1,6 @@
 $default-text-color: #f2c480;
 .page {
-  background-image: url(../../../../public/img/assets/backgrounds/paper_bg.jpg);
+  background-image: url(/img/assets/backgrounds/paper_bg.jpg);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -42,8 +42,8 @@ $default-text-color: #f2c480;
 }
 
 .cim {
-  font-size: large;
   width: 100%;
+  text-wrap: nowrap;
   line-height: 5rem;
   font-size: 1.6rem;
 }

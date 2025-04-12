@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { FajokComponent } from './pages/fajok/fajok.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
@@ -12,7 +11,36 @@ export const routes: Routes = [
   {
     path: 'fajok',
     title: 'Ágas és Bogas | Fajok',
-    component: FajokComponent,
+    loadComponent: () =>
+      import('./pages/fajok/fajok.component').then((m) => m.FajokComponent),
+  },
+  {
+    path: 'login',
+    title: 'Bejelentkezés',
+    loadComponent: () =>
+      import('./pages/login/login.component').then((m) => m.LoginComponent),
+  },
+  {
+    path: 'register',
+    title: 'Regisztráció',
+    loadComponent: () =>
+      import('./pages/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
+  {
+    path: 'profil',
+    title: 'Profil',
+    loadComponent: () =>
+      import('./pages/profil/profil.component').then((m) => m.ProfilComponent),
+  },
+  {
+    path: 'karakter-keszito',
+    title: 'Karakter készítő',
+    loadComponent: () =>
+      import('./pages/karakter-keszito/karakter-keszito.component').then(
+        (m) => m.KarakterKeszitoComponent
+      ),
   },
   {
     path: 'fajok/folyokoz',

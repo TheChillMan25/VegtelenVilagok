@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <a mat-list-item id="world" (click)="toggleMenu('world-options')">
+  <a mat-list-item id="world" (click)="toggleOptions('world-options')">
     <span class="menu-item-text main-item">A világ</span>
     <div id="world-options">
       <!-- <a routerLink="/eredet" (click)="closeMenu()">
@@ -13,7 +13,7 @@
       </a>
     </div>
   </a>
-  <a mat-list-item id="system" (click)="toggleMenu('system-options')">
+  <a mat-list-item id="system" (click)="toggleOptions('system-options')">
     <span class="menu-item-text main-item">Rendszer</span>
     <div id="system-options">
       <a routerLink="/karakter" (click)="closeMenu()">
@@ -24,10 +24,22 @@
       </a>
     </div>
   </a>
-  <a mat-list-item routerLink="/profil"
-    ><span class="menu-item-text main-item">Profil</span></a
-  >
-  <a mat-list-item routerLink="/karakter-keszito"
+
+  @if(isLoggedIn){
+  <a mat-list-item routerLink="/karakter-keszito" (click)="closeMenu()"
     ><span class="menu-item-text main-item">Karakter készítő</span></a
   >
+  <a mat-list-item routerLink="/profil" (click)="closeMenu()"
+    ><span class="menu-item-text main-item">Profil</span></a
+  >
+  <a mat-list-item
+    ><span class="menu-item-text main-item" (click)="logout()">Kilépés</span></a
+  >
+  } @if(!isLoggedIn){
+  <a mat-list-item routerLink="/login"
+    ><span class="menu-item-text main-item" (click)="closeMenu()"
+      >Belépés</span
+    ></a
+  >
+  }
 </mat-nav-list>
