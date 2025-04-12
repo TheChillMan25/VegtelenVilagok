@@ -21,7 +21,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: #222;
+  background-color: #222 !important;
   overflow-y: auto;
   scrollbar-width: none;
 }
@@ -37,4 +37,23 @@ body {
 
 .mat-mdc-notch-piece {
   border: none !important;
+}
+
+.mdc-line-ripple::before,
+.mdc-line-ripple::after {
+  border-bottom-style: none !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled)
+  .mat-mdc-text-field-wrapper,
+.mat-mdc-text-field-wrapper {
+  border: 0.2rem solid #222 !important;
+}
+
+.mat-mdc-select-min-line {
+  color: whitesmoke !important;
 }

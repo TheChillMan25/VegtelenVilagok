@@ -1,31 +1,32 @@
 <div class="character-card">
-    <div class="character-header">
-      <span class="character-name">{{ character.nev }}</span>
-      <span class="character-path value"
-        >{{ character.ut }}
-        <span class="value">{{ character.utSzint }}</span></span
-      >
-    </div>
-    <div class="char-content">
-      <span class="character-faj value"
-        ><span class="faj-text">Faj:</span> {{ character.faj }}</span
-      >
-      <span>Tulajdonságok</span>
-      <div class="main-stats">
-        @for (mainStat of character.mainStatok; track $index) {
-        <div class="main-stat">
-          <span class="name">{{ mainStat.nev }} </span
-          ><span class="value">{{ mainStat.ertek }}</span>
-        </div>
-        }
-      </div>
-      <div class="stats">
-        @for (stat of character.statok; track $index) {
-        <div class="stat">
-          <span class="name">{{ stat.nev }} </span
-          ><span class="value">{{ stat.ertek }}</span>
-        </div>
-        }
-      </div>
-    </div>
+  <div class="character-header">
+    <span class="character-name">{{ character.nev }}</span>
+    <span class="character-path value"
+      >{{ character.ut }}
+      <span class="value">{{ character.utSzint }}</span></span
+    >
   </div>
+  <div class="char-content">
+    <span class="character-faj value"
+      ><span class="faj-text">Faj:</span> {{ character.faj }}</span
+    >
+    <span>Tulajdonságok</span>
+    <div class="main-stats">
+      @for (mainStat of character.mainStatok; track $index) {
+      <div class="main-stat">
+        <span class="name">{{ mainStat.nev }} </span
+        ><span class="value">{{ mainStat.ertek }}</span>
+      </div>
+      }
+    </div>
+    <div class="stats">
+      @for (stat of character.statok; track $index) {
+      <div class="stat">
+        <span class="name">{{ stat.nev }} </span
+        ><span class="value">{{ stat.ertek }}</span>
+      </div>
+      }
+    </div>
+    <span class="date">{{ character.keszitett.toISOString() | dateFormatter }}</span>
+  </div>
+</div>

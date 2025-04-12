@@ -29,9 +29,6 @@ export class KarakterComponent {
   ngOnInit() {
     this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   }
-  reset() {
-    this.segment = 0;
-  }
 
   next() {
     if (this.segment < 5) {

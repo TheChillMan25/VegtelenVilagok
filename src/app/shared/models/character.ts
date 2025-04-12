@@ -10,4 +10,5 @@ export interface Character {
   utSzint: number;
   felszereles: string[];
   targyak: string[];
+  keszitett: Date;
 }

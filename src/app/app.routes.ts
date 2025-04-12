@@ -35,6 +35,14 @@ export const routes: Routes = [
       import('./pages/profil/profil.component').then((m) => m.ProfilComponent),
   },
   {
+    path: 'karakter-keszito',
+    title: 'Karakter készítő',
+    loadComponent: () =>
+      import('./pages/karakter-keszito/karakter-keszito.component').then(
+        (m) => m.KarakterKeszitoComponent
+      ),
+  },
+  {
     path: 'fajok/folyokoz',
     title: 'Fajok | Folyóköziek',
     loadComponent: () =>

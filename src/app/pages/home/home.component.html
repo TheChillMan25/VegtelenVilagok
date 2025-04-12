@@ -23,8 +23,10 @@
       <!-- <p>Bejelentkezés: test&commat;gmail.com, testpw</p> -->
       <span id="close" (click)="closeAbout()">Bezárás</span>
     </div>
-    <p id="cim">Értelmes Fajok Enciklopédiája</p>
-    <p id="text">
+    <p id="cim" [appTextShadow]="'0.2rem 0.2rem 0.2rem black'">
+      Értelmes Fajok Enciklopédiája
+    </p>
+    <p id="text" [appTextShadow]="'0.2rem 0.2rem 0.2rem black'">
       Ezen az oldalon a Kalauz a Végtelen Világokhoz nevű szerepjáték játszható
       fajairól olvashatsz rövid leírást. A fajok listája bővülni fog a későbbi
       kiadásokban, egyelőre az emberi és ember alkotta fajok elérhetőek, de
