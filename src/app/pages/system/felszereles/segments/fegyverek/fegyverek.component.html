@@ -10,17 +10,20 @@
     }
   </div>
   <div id="weapons">
-    @for (weapon of weapons; track $index) {
-    <div class="weapon" (click)="showDetails($index)">
-      <span class="nev">{{ weapon.nev }}</span>
-      @if (selected === $index) {
-      <div class="details">
+    <h2>Fegyverek</h2>
+    <div id="weapon-container">
+      @for (weapon of weapons; track $index) {
+      <div class="weapon" (click)="showDetails($index)">
         <span class="nev">{{ weapon.nev }}</span>
-        <span class="dice">Sebzés kocka: {{ weapon.kocka }}</span>
-        <span class="props">Hatások: {{ weapon.props }}</span>
+        @if (selected === $index) {
+        <div class="details">
+          <span class="nev">{{ weapon.nev }}</span>
+          <span class="dice">Sebzés kocka: {{ weapon.kocka }}</span>
+          <span class="props">Hatások: {{ weapon.props }}</span>
+        </div>
+        }
       </div>
       }
     </div>
-    }
   </div>
 </div>

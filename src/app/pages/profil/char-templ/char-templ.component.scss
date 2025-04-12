@@ -1,0 +1,77 @@
+.character-card {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: #222;
+  color: #f2c480;
+}
+
+.character-header {
+  width: calc(100% - 2rem);
+  display: flex;
+  justify-content: space-between;
+  font-size: larger;
+  padding: 1rem;
+  border: 0.5rem;
+  background-color: #444;
+  border-radius: 0.5rem;
+}
+
+.char-content {
+  width: calc(100% - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #444;
+  border-radius: 0.5rem;
+}
+
+.faj-text {
+  color: #f2c480;
+}
+
+.value {
+  color: whitesmoke;
+}
+.main-stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.main-stat {
+  display: flex;
+  gap: 1rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.stat-name {
+  display: flex;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.character-path {
+  display: flex;
+  gap: 1rem;
+}
+
+.date {
+  color: whitesmoke;
+}

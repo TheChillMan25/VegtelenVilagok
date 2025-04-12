@@ -1,0 +1,175 @@
+<div class="page">
+  <form
+    [formGroup]="characterForm"
+    (submit)="createCharacter()"
+    class="characterForm"
+  >
+    <div id="header" class="container">
+      <mat-form-field>
+        <mat-label>Karakter neve</mat-label>
+        <input matInput type="text" formControlName="nev" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Válassz fajt...</mat-label>
+        <mat-select formControlName="faj">
+          <mat-option [value]="null"></mat-option>
+          @for (faj of fajok; track $index) {
+          <mat-option [value]="faj.nationName">{{ faj.nationName }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Válassz utat...</mat-label>
+        <mat-select formControlName="ut">
+          <mat-option [value]="null"></mat-option>
+          @for (ut of utak; track $index) {
+          <mat-optgroup>
+            <mat-label>{{ ut.foUt }}</mat-label>
+            @for (ut of ut.utak; track $index) {
+            <mat-option [value]="ut">
+              {{ ut }}
+            </mat-option>
+            }
+          </mat-optgroup>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div id="stats" formGroupName="statok">
+      <div id="physical" class="stat-container" formGroupName="fizikai">
+        <mat-label
+          >Erő
+          <mat-form-field class="stat">
+            <input
+              matInput
+              type="number"
+              min="-3"
+              max="3"
+              formControlName="ero"
+            />
+          </mat-form-field>
+        </mat-label>
+        <mat-label
+          >Ügyesség
+          <mat-form-field class="stat">
+            <input
+              matInput
+              type="number"
+              min="-3"
+              max="3"
+              formControlName="ugyesseg"
+            /> </mat-form-field
+        ></mat-label>
+        <mat-label
+          >Kitartás
+          <mat-form-field class="stat">
+            <input
+              matInput
+              type="number"
+              min="-3"
+              max="3"
+              formControlName="kitartas"
+            />
+          </mat-form-field>
+        </mat-label>
+      </div>
+      <div id="mental" class="stat-container" formGroupName="mentalis">
+        <mat-label
+          >Ész
+          <mat-form-field class="stat">
+            <input
+              matInput
+              type="number"
+              min="-3"
+              max="3"
+              formControlName="esz"
+            />
+          </mat-form-field>
+        </mat-label>
+        <mat-label
+          >Fortély
+          <mat-form-field class="stat">
+            <input
+              matInput
+              type="number"
+              min="-3"
+              max="3"
+              formControlName="fortely"
+            />
+          </mat-form-field>
+        </mat-label>
+        <mat-label
+          >Akaraterő
+          <mat-form-field class="stat">
+            <input
+              matInput
+              type="number"
+              min="-3"
+              max="3"
+              formControlName="akaratero"
+            />
+          </mat-form-field>
+        </mat-label>
+      </div>
+    </div>
+    <div id="felszereles" formGroupName="felszereles" class="container">
+      <mat-form-field>
+        <mat-label>Bal kéz...</mat-label>
+        <mat-select formControlName="balKez">
+          <mat-option [value]="null"></mat-option>
+          @for (fegyver of fegyverek; track $index) {
+          <mat-option [value]="fegyver.nev">{{ fegyver.nev }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Jobb kéz...</mat-label>
+        <mat-select formControlName="jobbKez">
+          <mat-option [value]="null"></mat-option>
+          @for (fegyver of fegyverek; track $index) {
+          <mat-option [value]="fegyver.nev">{{ fegyver.nev }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Páncél...</mat-label>
+        <mat-select formControlName="pancel">
+          <mat-option [value]="null"></mat-option>
+          @for (pancel of pancelok; track $index) {
+          <mat-option [value]="pancel.nev">{{ pancel.nev }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div id="targyak" formGroupName="targyak" class="container">
+      <mat-form-field>
+        <mat-label>Tárgy...</mat-label>
+        <mat-select formControlName="targy1">
+          <mat-option [value]="null"></mat-option>
+          @for (targy of targyak; track $index) {
+          <mat-option [value]="targy.nev">{{ targy.nev }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tárgy...</mat-label>
+        <mat-select formControlName="targy2">
+          <mat-option [value]="null"></mat-option>
+          @for (targy of targyak; track $index) {
+          <mat-option [value]="targy.nev">{{ targy.nev }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tárgy...</mat-label>
+        <mat-select formControlName="targy3">
+          <mat-option [value]="null"></mat-option>
+          @for (targy of targyak; track $index) {
+          <mat-option [value]="targy.nev">{{ targy.nev }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button type="submit">Karakter létrehozása</button>
+  </form>
+</div>

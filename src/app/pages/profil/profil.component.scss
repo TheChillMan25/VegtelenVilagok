@@ -1,0 +1,77 @@
+.page {
+  background-image: url(/img/assets/backgrounds/bg.jpg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: whitesmoke;
+}
+
+#profil-data {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #333;
+}
+
+#character-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 60%;
+  background-color: rgba(51, 51, 51, 0.9);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#character-container::-webkit-scrollbar {
+  width: 0;
+}
+
+app-char-templ {
+  width: fit-content;
+  height: fit-content;
+}
+
+#asd {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+#pfp {
+  height: 10rem;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .container {
+    width: auto !important;
+  }
+
+  #profil-data {
+    height: 20%;
+    flex-direction: row;
+    border-radius: 1rem 1rem 0 0  ;
+
+    img {
+      height: 4rem;
+    }
+  }
+
+  #character-container {
+    justify-content: center;
+    border-radius: 0 0 1rem 1rem;
+  }
+}

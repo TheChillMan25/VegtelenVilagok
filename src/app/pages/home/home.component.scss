@@ -1,7 +1,5 @@
-$bg_url: "../../../../public/img/assets/backgrounds/bg.jpg";
-
 .page {
-  background-image: url($bg_url);
+  background-image: url(/img/assets/backgrounds/bg.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +12,6 @@ $bg_url: "../../../../public/img/assets/backgrounds/bg.jpg";
   justify-content: center;
   gap: 1rem;
   color: whitesmoke;
-  text-shadow: 0.2rem 0.2rem 0.2rem black;
   font-size: 1.7rem;
 }
 
@@ -91,13 +88,13 @@ $bg_url: "../../../../public/img/assets/backgrounds/bg.jpg";
     font-size: medium;
   }
 
-  #close{
+  #close {
     font-size: smaller;
   }
 }
 
-@media (max-width: 400px) and (max-height: 700px){
-  #about{
+@media (max-width: 400px) and (max-height: 700px) {
+  #about {
     font-size: small;
   }
 }

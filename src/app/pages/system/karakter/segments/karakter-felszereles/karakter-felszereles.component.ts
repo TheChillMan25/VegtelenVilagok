@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
+import { ArmourData } from '../weapons_data';
 
 interface Fegyver {
   nev: string;
@@ -14,8 +15,6 @@ interface Pancel {
   mod: number;
   ar: number;
 }
-
-
 
 @Component({
   selector: 'app-karakter-felszereles',
@@ -44,12 +43,7 @@ export class KarakterFelszerelesComponent {
     { nev: 'Kézi balliszta', kocka: '1d20', ar: 50 },
   ];
 
-  armours: Pancel[] = [
-    {nev: 'Ruha', ertek: 1, mod: 0, ar: 15},
-    {nev: 'Ruha', ertek: 2, mod: 0, ar: 25},
-    {nev: 'Ruha', ertek: 3, mod: -1, ar: 35},
-    {nev: 'Sétáló erőd', ertek: 5, mod: -2, ar: 50}
-  ]
+  armours: Pancel[] = ArmourData;
 
   weaponDataSource = new MatTableDataSource<Fegyver>(this.weapons);
   armourDataSource = new MatTableDataSource<Pancel>(this.armours);

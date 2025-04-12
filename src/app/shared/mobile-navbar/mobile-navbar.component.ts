@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,6 +12,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class MobileNavbarComponent {
   @Input() sidenav!: MatSidenav;
+  @Input() isLoggedIn: boolean = false;
+  @Output() logoutEvent = new EventEmitter<void>();
 
   closeMenu() {
     if (this.sidenav) {
@@ -19,12 +21,18 @@ export class MobileNavbarComponent {
     }
   }
 
-  toggleMenu(menu: string) {
-    let menuObj = document.getElementById(menu);
-    if (menuObj?.classList.contains('open')) {
-      menuObj.classList.remove('open');
+  toggleOptions(menu: string) {
+    let options = document.getElementById(menu);
+    if (options?.classList.contains('open')) {
+      options.classList.remove('open');
     } else {
-      menuObj?.classList.add('open');
+      options?.classList.add('open');
     }
+  }
+
+  logout() {
+    localStorage.setItem('isLoggedIn', 'false');
+    window.location.href = '/home';
+    this.closeMenu();
   }
 }

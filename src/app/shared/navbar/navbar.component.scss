@@ -1,7 +1,7 @@
 $default-text-color: #f2c480;
 $secondary-text-color: whitesmoke;
 
-*{
+* {
   z-index: 100;
 }
 
@@ -19,7 +19,7 @@ $secondary-text-color: whitesmoke;
   justify-content: center;
   padding: 1rem;
   cursor: pointer;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .navbar-link:hover {
@@ -37,5 +37,24 @@ $secondary-text-color: whitesmoke;
 }
 
 #world:hover #info-container {
+  display: flex;
+}
+
+#loggers {
+  margin-left: auto;
+  display: flex;
+}
+
+#options {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  color: #f2c480;
+  background-color: #333;
+}
+
+#profil-options:hover #options {
   display: flex;
 }
