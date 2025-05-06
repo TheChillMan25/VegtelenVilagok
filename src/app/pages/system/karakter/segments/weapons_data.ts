@@ -23,7 +23,7 @@ export const WeaponsData = [
 
 export const ArmourData = [
   { nev: 'Ruha', ertek: 1, mod: 0, ar: 15 },
-  { nev: 'Ruha', ertek: 2, mod: 0, ar: 25 },
-  { nev: 'Ruha', ertek: 3, mod: -1, ar: 35 },
+  { nev: 'Könnyű páncél', ertek: 2, mod: 0, ar: 25 },
+  { nev: 'Nehéz páncél', ertek: 3, mod: -1, ar: 35 },
   { nev: 'Sétáló erőd', ertek: 5, mod: -2, ar: 50 },
 ];

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { CharTemplComponent } from './char-templ/char-templ.component';
-import { CharactersService } from '../../shared/sercices/characters.service';
 import { Character } from '../../shared/models/character';
+import { UserService } from '../../shared/services/management/user.service';
+import { User } from '../../shared/models/user';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-profil',
@@ -10,15 +12,40 @@ import { Character } from '../../shared/models/character';
   styleUrl: './profil.component.scss',
 })
 export class ProfilComponent {
+  user: User | null = null;
   characters: Character[] = [];
-  constructor(private charService: CharactersService) {
-    this.loadCharacters();
+  username: string = '';
+  email: string = '';
+
+  isLoading: boolean = true;
+  private subscription: Subscription | null = null;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.loadUserProfile();
   }
 
-  loadCharacters() {
-    this.charService.getCharacters().subscribe((characters) => {
-      this.characters = characters;
-      console.log('Characters loaded: ', this.characters);
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
+  loadUserProfile() {
+    this.isLoading = true;
+    this.subscription = this.userService.getUserProfile().subscribe({
+      next: (data) => {
+        (this.user = data.user),
+          (this.characters = data.characters),
+          (this.username = data.username),
+          (this.email = data.email);
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Hiba a felhasználói profil betöltésekor:', error);
+        this.isLoading = false;
+      },
     });
   }
 }

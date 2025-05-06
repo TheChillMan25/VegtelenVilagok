@@ -15,7 +15,7 @@
       @for (mainStat of character.mainStatok; track $index) {
       <div class="main-stat">
         <span class="name">{{ mainStat.nev }} </span
-        ><span class="value">{{ mainStat.ertek }}</span>
+        ><span class="value">{{ mainStat.ertek }}/{{ mainStat.max }}</span>
       </div>
       }
     </div>
@@ -27,6 +27,6 @@
       </div>
       }
     </div>
-    <span class="date">{{ character.keszitett.toISOString() | dateFormatter }}</span>
+    <span class="date">{{ character.keszitett }}</span>
   </div>
 </div>

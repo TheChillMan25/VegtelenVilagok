@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Webker_VegtelenVilgaok' title`, () => {
+  it(`should have the 'vegtelen_vilagok' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Webker_VegtelenVilgaok');
+    expect(app.title).toEqual('vegtelen_vilagok');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Webker_VegtelenVilgaok');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, vegtelen_vilagok'
+    );
   });
 });
