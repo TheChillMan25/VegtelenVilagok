@@ -129,7 +129,7 @@ export class KarakterKeszitoComponent {
           {
             nev: 'HP',
             ertek: formValues.statok.fizikai.ero + 7,
-            max: formValues.statok.fizikai.kitartas + 7,
+            max: formValues.statok.fizikai.ero + 7,
             desc: 'Találati pontok',
           },
           {

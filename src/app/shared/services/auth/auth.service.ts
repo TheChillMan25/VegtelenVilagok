@@ -13,7 +13,6 @@ import {
 import { collection } from 'firebase/firestore';
 import { doc, Firestore, setDoc } from '@angular/fire/firestore';
 import { User } from '../../models/user';
-import { Character } from '../../models/character';
 
 @Injectable({
   providedIn: 'root',

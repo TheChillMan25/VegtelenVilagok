@@ -1,8 +1,10 @@
 <div class="page">
   <div id="profil-data" class="container">
     <img id="pfp" src="img/pfp/blank.png" alt="Test" />
-    <h2>{{ username }}</h2>
-    <h3>{{ email }}</h3>
+    <div id="data">
+      <h2>{{ username }}</h2>
+      <h3>{{ email }}</h3>
+    </div>
   </div>
   <div id="character-container" class="container">
     @for (character of characters; track $index) {

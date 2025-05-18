@@ -1,4 +1,4 @@
-<div class="character-card">
+<div class="character-card" (click)="getCharacterID()">
   <div class="character-header">
     <span class="character-name">{{ character.nev }}</span>
     <span class="character-path value"
@@ -28,5 +28,6 @@
       }
     </div>
     <span class="date">{{ character.keszitett }}</span>
+    <input type="hidden" name="id" value="{{ character.id }}" />
   </div>
 </div>

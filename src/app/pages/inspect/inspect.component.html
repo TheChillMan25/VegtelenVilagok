@@ -1,0 +1,131 @@
+<div class="page">
+  <div id="header">
+    <span id="name">{{ character?.nev }}</span>
+    <div id="hContent">
+      <span id="faj">{{ character?.faj }}</span
+      ><span id="ut">{{ character?.ut }} {{ character?.utSzint }}</span>
+    </div>
+  </div>
+  <div id="body">
+    <div id="stats">
+      @for(stat of character?.statok; track $index){
+      <div class="stat">
+        <span class="statName">{{ stat.nev }}</span
+        ><span class="statValue">{{ stat.ertek }}</span>
+      </div>
+      }
+      <form [formGroup]="hpFormGroup" class="mainStat">
+        <span class="statName">{{ character?.mainStatok?.[0]?.nev }}</span
+        ><span class="statValue"
+          >{{ character?.mainStatok?.[0]?.ertek
+
+
+          }}/{{ character?.mainStatok?.[0]?.max }}</span
+        >
+        <div id="modInput">
+          <button (click)="heal(character?.mainStatok?.[0]?.nev)">+</button>
+          <input
+            matInput
+            formControlName="hpInput"
+            type="number"
+            name="statMod"
+            class="statModInput"
+            id="statModHP"
+            min="1"
+          />
+          <button (click)="damage(character?.mainStatok?.[0]?.nev)">-</button>
+        </div>
+      </form>
+      <form [formGroup]="strFormGroup" class="mainStat">
+        <span class="statName">{{ character?.mainStatok?.[1]?.nev }}</span
+        ><span class="statValue"
+          >{{ character?.mainStatok?.[1]?.ertek
+
+
+          }}/{{ character?.mainStatok?.[1]?.max }}</span
+        >
+        <div id="modInput">
+          <button (click)="heal(character?.mainStatok?.[1]?.nev)">+</button>
+          <input
+            matInput
+            formControlName="strInput"
+            type="number"
+            name="statMod"
+            class="statModInput"
+            id="statModHP"
+            min="1"
+          />
+          <button (click)="damage(character?.mainStatok?.[1]?.nev)">-</button>
+        </div>
+      </form>
+    </div>
+    <div id="other">
+      <div id="equipment">
+        <span class="title">Felszerelés</span>
+        <div class="container">
+          <div id="left">
+            Bal kéz<span class="weapon">
+              @if (character?.felszereles?.[0] !== ''){
+              {{character?.felszereles?.[0]}}
+              } @else { - }</span
+            >
+          </div>
+          <div id="right">
+            Jobb kéz
+            <span class="weapon">
+              @if (character?.felszereles?.[1] !== ''){
+              {{character?.felszereles?.[1]}}
+              } @else { - }
+            </span>
+          </div>
+          <div id="armourContent">
+            Páncél
+            <span id="armour"
+              >{{character?.felszereles?.[2]}}@switch
+              (character?.felszereles?.[2]) { @case ('Ruha'){
+              <span class="armourValue">1</span>
+              <span class="sneakMod">-</span>
+              }@case ('Könnyű páncél'){
+              <span class="armourValue">2</span>
+              <span class="sneakMod">0</span>
+              }@case ('Nehéz páncél'){
+              <span class="armourValue">3</span>
+              <span class="sneakMod">-1</span>
+              }@case ('Sétáló erőd'){
+              <span class="armourValue">5</span>
+              <span class="sneakMod">-2</span>
+              }@default {
+              <span>-</span>
+              <span class="armourValue">-</span>
+              <span class="sneakMod">-</span>
+              } }</span
+            >
+          </div>
+        </div>
+      </div>
+      <div id="inventory">
+        <span class="title">Tárgyak</span>
+        <div class="container">
+          <span id="elso" class="item">
+            @if (character?.targyak?.[0] !== ''){
+            {{character?.targyak?.[0]}}
+            } @else { - }</span
+          >
+          <span id="masodik" class="item">
+            @if (character?.targyak?.[1] !== ''){
+            {{character?.targyak?.[1]}}
+            } @else { - }
+          </span>
+          <span id="harmadik" class="item">
+            @if (character?.targyak?.[0] !== ''){
+            {{character?.targyak?.[0]}}
+            } @else { - }</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="delete" (click)="deleteCharacter()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

@@ -4,6 +4,8 @@ import { Character } from '../../shared/models/character';
 import { UserService } from '../../shared/services/management/user.service';
 import { User } from '../../shared/models/user';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { CharacterService } from '../../shared/services/management/character.service';
 
 @Component({
   selector: 'app-profil',
@@ -16,25 +18,33 @@ export class ProfilComponent {
   characters: Character[] = [];
   username: string = '';
   email: string = '';
+  freshStarterCharacters$: Character[] = [];
 
   isLoading: boolean = true;
-  private subscription: Subscription | null = null;
+  private profileSubscription: Subscription | null = null;
+  private characterSubscription: Subscription | null = null;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private charService: CharacterService
+  ) {}
 
   ngOnInit() {
     this.loadUserProfile();
   }
 
   ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
+    if (this.profileSubscription) {
+      this.profileSubscription.unsubscribe();
+    }
+    if (this.characterSubscription) {
+      this.characterSubscription.unsubscribe();
     }
   }
 
   loadUserProfile() {
     this.isLoading = true;
-    this.subscription = this.userService.getUserProfile().subscribe({
+    this.profileSubscription = this.userService.getUserProfile().subscribe({
       next: (data) => {
         (this.user = data.user),
           (this.characters = data.characters),
@@ -47,5 +57,17 @@ export class ProfilComponent {
         this.isLoading = false;
       },
     });
+    this.characterSubscription = this.charService
+      .getFreshStarterCharacters()
+      .subscribe({
+        next: (data) => {
+          this.freshStarterCharacters$ = data;
+          console.log(this.freshStarterCharacters$);
+        },
+        error: (error) => {
+          console.error('Hiba a friss karakterek betöltésekor:', error);
+          this.isLoading = false;
+        },
+      });
   }
 }

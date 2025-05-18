@@ -33,6 +33,24 @@ export const routes: Routes = [
     canActivate: [publicGuard],
   },
   {
+    path: 'karakter',
+    title: 'Ágas és Bogas | Karakter',
+    loadComponent: () =>
+      import('./pages/system/karakter/karakter.component').then(
+        (m) => m.KarakterComponent
+      ),
+    canActivate: [publicGuard],
+  },
+  {
+    path: 'felszereles',
+    title: 'Ágas és Bogas | Felszerelés',
+    loadComponent: () =>
+      import('./pages/system/felszereles/felszereles.component').then(
+        (m) => m.FelszerelesComponent
+      ),
+    canActivate: [publicGuard],
+  },
+  {
     path: 'profil',
     title: 'Profil',
     loadComponent: () =>
@@ -45,6 +63,15 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/karakter-keszito/karakter-keszito.component').then(
         (m) => m.KarakterKeszitoComponent
+      ),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'inspect/:id',
+    title: 'Karakter',
+    loadComponent: () =>
+      import('./pages/inspect/inspect.component').then(
+        (m) => m.InspectComponent
       ),
     canActivate: [authGuard],
   },
@@ -99,24 +126,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/fajok/fajok/atkozottak/atkozottak.component').then(
         (m) => m.AtkozottakComponent
-      ),
-    canActivate: [publicGuard],
-  },
-  {
-    path: 'karakter',
-    title: 'Ágas és Bogas | Karakter',
-    loadComponent: () =>
-      import('./pages/system/karakter/karakter.component').then(
-        (m) => m.KarakterComponent
-      ),
-    canActivate: [publicGuard],
-  },
-  {
-    path: 'felszereles',
-    title: 'Ágas és Bogas | Felszerelés',
-    loadComponent: () =>
-      import('./pages/system/felszereles/felszereles.component').then(
-        (m) => m.FelszerelesComponent
       ),
     canActivate: [publicGuard],
   },

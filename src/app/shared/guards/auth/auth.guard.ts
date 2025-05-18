@@ -20,17 +20,5 @@ export const authGuard: CanActivateFn = (route, state) => {
 };
 
 export const publicGuard: CanActivateFn = (route, state) => {
-  const router = inject(Router);
-  const authService = inject(AuthService);
-
-  return authService.currentUser.pipe(
-    take(1),
-    map((user) => {
-      if (!user) {
-        return true;
-      }
-      router.navigateByUrl('/home');
-      return false;
-    })
-  );
+  return true;
 };
