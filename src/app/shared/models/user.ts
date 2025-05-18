@@ -1,8 +1,8 @@
 import { Character } from './character';
 
 export interface User {
+  id: string | null | undefined;
   username: string | null | undefined;
   email: string | null | undefined;
-  password: string | null | undefined;
-  characters: Character[] | null | undefined;
+  characters: string[];
 }
