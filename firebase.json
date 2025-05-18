@@ -1,1 +1,16 @@
-{}
+{
+  "hosting": {
+    "public": "dist/webker-vegtelen-vilgaok/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
