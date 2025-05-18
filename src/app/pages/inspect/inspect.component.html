@@ -20,6 +20,7 @@
           >{{ character?.mainStatok?.[0]?.ertek
 
 
+
           }}/{{ character?.mainStatok?.[0]?.max }}</span
         >
         <div id="modInput">
@@ -40,6 +41,7 @@
         <span class="statName">{{ character?.mainStatok?.[1]?.nev }}</span
         ><span class="statValue"
           >{{ character?.mainStatok?.[1]?.ertek
+
 
 
           }}/{{ character?.mainStatok?.[1]?.max }}</span
@@ -117,8 +119,8 @@
             } @else { - }
           </span>
           <span id="harmadik" class="item">
-            @if (character?.targyak?.[0] !== ''){
-            {{character?.targyak?.[0]}}
+            @if (character?.targyak?.[2] !== ''){
+            {{character?.targyak?.[2]}}
             } @else { - }</span
           >
         </div>
