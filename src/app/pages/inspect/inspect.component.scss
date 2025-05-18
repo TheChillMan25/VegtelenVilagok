@@ -1,0 +1,215 @@
+.page {
+  background-image: url(/img/assets/backgrounds/paper_bg.jpg);
+  padding: 0;
+  width: 100%;
+  height: calc(100% - 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #delete {
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+    border: 0.2rem solid #333;
+    border-radius: 0.5rem;
+    background-color: #444;
+    color: whitesmoke;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+  }
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 4rem;
+  width: calc(100% - 2rem);
+  background-color: #444;
+  color: whitesmoke;
+
+  #name {
+    margin-left: 10rem;
+    font-size: 3rem;
+  }
+
+  #hContent {
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    font-size: x-large;
+  }
+}
+
+#body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: calc(100% - 2rem);
+  width: calc(80% - 2rem);
+  background-color: #555;
+  #stats {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    flex-wrap: wrap;
+
+    .stat,
+    .mainStat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem;
+      height: 5rem;
+      background-color: #444;
+      min-width: 5rem;
+      border: 0.3rem solid #333;
+      border-radius: 1rem;
+    }
+
+    .statName {
+      color: #f2c480;
+    }
+    .statValue {
+      color: whitesmoke;
+    }
+    .stat .statValue {
+      padding: 0.5rem;
+      border: 0.2rem solid #333;
+      border-radius: 0.5rem;
+      width: 1rem;
+      background-color: #555;
+    }
+
+    .modInput {
+      display: flex;
+    }
+
+    .statModInput {
+      width: 2rem;
+      padding-left: 0.3rem;
+    }
+  }
+
+  #other {
+    display: flex;
+    padding: 2rem;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    gap: 2rem;
+    .title {
+      color: #f2c480;
+      font-size: x-large;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+
+    #equipment {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      #left,
+      #right,
+      #armourContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: #f2c480;
+        font-size: larger;
+      }
+
+      #armour {
+        border-radius: 0 0 50% 50%;
+        height: 10rem;
+        justify-content: space-between;
+
+        .armourValue {
+          padding: 0.5rem 1rem;
+          background-color: #555;
+          border: 0.2rem solid #333;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+    .weapon,
+    #armour {
+      color: whitesmoke;
+      padding: 0.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      background-color: #444;
+      border: 0.3rem solid #333;
+      min-width: 10rem;
+    }
+
+    #inventory {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      .container {
+        justify-content: start;
+        gap: 1rem;
+        background-color: #444;
+        border: 0.3rem solid #333;
+
+        .item {
+          min-width: 10rem;
+          padding: 0.5rem;
+          color: whitesmoke;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #name {
+    margin-left: 1rem !important;
+    font-size: xx-large !important;
+  }
+
+  #hContent {
+    margin-right: 1rem !important;
+    font-size: larger !important;
+  }
+
+  #body {
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  #body::-webkit-scrollbar {
+    display: none;
+  }
+
+  #other {
+    flex-direction: column;
+  }
+
+  #stats {
+    justify-content: center !important;
+    gap: 1rem;
+  }
+}

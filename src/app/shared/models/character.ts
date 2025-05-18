@@ -2,6 +2,7 @@ import { MainStat } from './main_stat';
 import { Stat } from './statok';
 
 export interface Character {
+  id: string;
   nev: string;
   faj: string;
   mainStatok: MainStat[];
@@ -10,5 +11,5 @@ export interface Character {
   utSzint: number;
   felszereles: string[];
   targyak: string[];
-  keszitett: Date;
+  keszitett: string;
 }

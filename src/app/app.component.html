@@ -5,7 +5,8 @@
   <mat-sidenav #sidenav>
     <app-mobile-navbar
       [sidenav]="sidenav"
-      [isLoggedIn]="isLoggedIn" (logoutEvent)="handleLogin(false)"
+      [isLoggedIn]="isLoggedIn"
+      (logoutEvent)="handleLogin(false)"
     ></app-mobile-navbar>
   </mat-sidenav>
   <mat-sidenav-content>

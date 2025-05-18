@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,18 +15,24 @@ export class NavbarComponent {
   isLoggedIn: boolean = false;
   @Output() isLoggedOutEvent = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
-    this.checkLoginStatus();
-  }
+  private authSubscription?: Subscription;
 
-  checkLoginStatus(): void {
-    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authSubscription = this.authService.currentUser.subscribe((user) => {
+      this.isLoggedIn = !!user;
+      localStorage.setItem('isLoggedIn', this.isLoggedIn ? 'true' : 'false');
+    });
   }
 
   logout(): void {
-    localStorage.setItem('isLoggedIn', 'false');
     this.isLoggedOutEvent.emit(false);
     this.isLoggedIn = false;
-    window.location.href = '/home';
+    this.authService.signOut();
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription?.unsubscribe();
   }
 }

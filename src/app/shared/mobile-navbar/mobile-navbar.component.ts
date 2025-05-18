@@ -3,6 +3,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-mobile-navbar',
@@ -14,6 +16,17 @@ export class MobileNavbarComponent {
   @Input() sidenav!: MatSidenav;
   @Input() isLoggedIn: boolean = false;
   @Output() logoutEvent = new EventEmitter<void>();
+
+  private authSubscription?: Subscription;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authSubscription = this.authService.currentUser.subscribe((user) => {
+      this.isLoggedIn = !!user;
+      localStorage.setItem('isLoggedIn', this.isLoggedIn ? 'true' : 'false');
+    });
+  }
 
   closeMenu() {
     if (this.sidenav) {
@@ -31,8 +44,13 @@ export class MobileNavbarComponent {
   }
 
   logout() {
-    localStorage.setItem('isLoggedIn', 'false');
-    window.location.href = '/home';
-    this.closeMenu();
+    this.authService.signOut().then(() => {
+      this.logoutEvent.emit();
+      this.closeMenu();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription?.unsubscribe();
   }
 }

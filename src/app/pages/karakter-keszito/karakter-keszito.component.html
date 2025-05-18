@@ -170,6 +170,10 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <button type="submit">Karakter létrehozása</button>
+    <button type="submit">
+      @if(isLoading){
+        <mat-spinner diameter="24" class="spinner-button"></mat-spinner>
+      } @else { Karakter létrehozása }
+    </button>
   </form>
 </div>
