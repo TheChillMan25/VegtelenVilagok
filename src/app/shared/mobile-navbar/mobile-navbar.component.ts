@@ -21,6 +21,13 @@ export class MobileNavbarComponent {
 
   constructor(private authService: AuthService) {}
 
+  ngOnInit(): void {
+    this.authSubscription = this.authService.currentUser.subscribe((user) => {
+      this.isLoggedIn = !!user;
+      localStorage.setItem('isLoggedIn', this.isLoggedIn ? 'true' : 'false');
+    });
+  }
+
   closeMenu() {
     if (this.sidenav) {
       this.sidenav.close();
